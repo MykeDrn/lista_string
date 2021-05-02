@@ -2,21 +2,20 @@
 #include<stdlib.h>
 #include<string.h>
 
-
-void split(){
-
-    char n[160];
-    char *split;
-    printf("Frase: ");
-    gets(n);
-    system("cls");
-    split = strtok(n," ");
-    while(n != NULL){
-        printf("%s\n",split);
-        split=strtok(NULL," ");
+void separar(char* a){
+    char *separar;
+    separar = strtok(a," ");
+    while(a != '\0'){
+        printf("%s\n",separar);
+        separar=strtok('\0'," ");
   }
 };
 
 int main(){
-    split();
+    char n[160];
+    printf("Frase: ");
+    fflush(stdin);
+    gets(n);
+    system("cls");
+    separar(n);
 }
